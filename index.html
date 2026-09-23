@@ -1242,10 +1242,10 @@
       </article>
       <article class="testimonial-card reveal reveal-delay-3">
         <div class="stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="testimonial-text">"Sou síndica de um condomínio com 80 apartamentos e a Oliveira cuida das áreas comuns há 3 anos. Sempre pontuais, sempre eficientes. As reclamações de pragas chegaram a zero."</p>
+        <p class="testimonial-text">"A Oliveira cuida das áreas comuns há 3 anos. Sempre pontuais, sempre eficientes. As pragas chegaram a zero."</p>
         <div class="testimonial-author">
           <div class="author-avatar" aria-hidden="true">LM</div>
-          <div><div class="author-name">Luciana Menezes</div><div class="author-loc">Ipiranga/PR — Síndica</div></div>
+          <div><div class="author-name">Luciana</div><div class="author-loc">Ipiranga/PR — Síndica</div></div>
         </div>
       </article>
     </div>
@@ -1264,14 +1264,21 @@
         O JS duplica apenas os itens deste track para formar um loop contínuo.
         Para adicionar: <div class="client-logo"><img src="clientes/nome.png" alt="Nome da empresa"></div>
       -->
-      <div class="client-logo"><img src="https://imgur.com/zk9LDq9.png" alt="CSF"></div>
+      <div class="client-logo" style="flex-direction: column; gap: 4px;">
+        <img src="https://imgur.com/zk9LDq9.png" alt="CSF Ipiranga">
+        <span style="font-size: 0.6rem; color: rgba(255,255,255,0.6); line-height: 1;">Ipiranga</span>
+      </div>
+      <div class="client-logo" style="flex-direction: column; gap: 4px;">
+        <img src="https://imgur.com/zk9LDq9.png" alt="CSF Palmeira">
+        <span style="font-size: 0.6rem; color: rgba(255,255,255,0.6); line-height: 1;">Palmeira</span>
+      </div>
       <div class="client-logo"><img src="https://imgur.com/IYytRha.png" alt="Ipiranga"></div>
-      <div class="client-logo"><img src="https://imgur.com/zk9LDq9.png" alt="CSF"></div>
-      <div class="client-logo"><img src="https://imgur.com/IYytRha.png" alt="Ipiranga"></div>
-      <div class="client-logo"><img src="https://imgur.com/zk9LDq9.png" alt="CSF"></div>
-      <div class="client-logo"><img src="https://imgur.com/IYytRha.png" alt="Ipiranga"></div>
-      <div class="client-logo"><img src="https://imgur.com/zk9LDq9.png" alt="CSF"></div>
-      <div class="client-logo"><img src="https://imgur.com/IYytRha.png" alt="Ipiranga"></div>
+      <div class="client-logo"><img src="https://imgur.com/9ejUlCo.png" alt="Cliente"></div>
+      <div class="client-logo"><img src="https://imgur.com/PnFywkI.png" alt="Cliente"></div>
+      <div class="client-logo"><img src="https://imgur.com/l5zjaZp.png" alt="Cliente"></div>
+      <div class="client-logo"><img src="https://imgur.com/1xWMe1B.png" alt="Cliente"></div>
+      <div class="client-logo"><img src="https://imgur.com/CBxlWN9.png" alt="Cliente"></div>
+      <div class="client-logo"><img src="https://imgur.com/TyOK9HI.png" alt="Cliente"></div>
     </div>
   </div>
 </section>
@@ -1291,7 +1298,7 @@
         <span class="area-item">Rebouças</span>
         <span class="area-item">Irati</span>
         <span class="area-item">Prudentópolis</span>
-        <span class="area-item">Guamiranga</span>
+        <span class="area-item">Ponta Grossa</span>
         <span class="area-item">São João do Triunfo</span>
         <span class="area-item">Teixeira Soares</span>
       </div>
@@ -1376,11 +1383,11 @@
         </div>
         <div class="hours-row">
           <span class="hours-day">Segunda – Sexta</span>
-          <span class="hours-time">07:00 – 18:00</span>
+          <span class="hours-time">08:00 – 18:00</span>
         </div>
         <div class="hours-row">
           <span class="hours-day">Sábado</span>
-          <span class="hours-time">08:00 – 14:00</span>
+          <span class="hours-time">08:00 – 12:00</span>
         </div>
         <div class="hours-row">
           <span class="hours-day">Domingo</span>
@@ -1496,7 +1503,13 @@
   const mobileMenu = document.getElementById('mobileMenu');
   const openMenu   = () => { mobileMenu.classList.add('open');    menuBtn.setAttribute('aria-expanded','true');  document.body.style.overflow='hidden'; };
   const closeMenu  = () => { mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
-  menuBtn.addEventListener('click', openMenu);
+  menuBtn.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
   menuClose.addEventListener('click', closeMenu);
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
